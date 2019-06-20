@@ -1,0 +1,21 @@
+{
+    "name": "students",
+    "version": "1.0.0",
+    "description": "student table",
+    "main": "app.js",
+    "scripts": {
+        "start": "hotnode app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "student"
+    ],
+    "author": "gps",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mysql": "^2.17.1"
+    }
+}

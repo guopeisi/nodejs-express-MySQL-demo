@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script src="./app.js"></script> -->
+    <title>学生表</title>
+    <style>
+        .container {
+            width: 100%;
+            height: auto;
+            border: 1px solid red;
+        }
+        
+        #student {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table id="student" cellspacing='0' cellpadding='1'>
+            <thead id="tthead">
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>生日</th>
+                <th>操作</th>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+    <script>
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost/login',
+            data: null,
+            success: function(res) {
+                console.log(res);
+                var html = "";
+                for (var i = 0; i < res.data.length; i++) {
+                    html +=
+                        `
+                        <tr>
+                            <td>${res.data[i].sno}</td>
+                            <td>${res.data[i].sname}</td>
+                            <td>${res.data[i].sex}</td>
+                            <td>${res.data[i].birth}</td>
+                            <td>
+                                <button>ADD</button>
+                                <button>DELETE</button>
+                            </td>
+                        </tr>
+                        `;
+                }
+                $("#tbody").html(html);
+            },
+            error: function(data) {
+                console.log('err');
+            }
+        })
+    </script>
+</body>
+
+</html>
