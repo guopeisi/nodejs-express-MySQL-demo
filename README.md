@@ -1,5 +1,5 @@
-创建数据库，设计表，连接，用nodejs+express+MySQL写接口并成功调用。
 # nodejs-express-MySQL-demo
+创建数据库，设计表，连接，用nodejs+express+MySQL写接口并成功调用。
 a demo for writing interfaces with nodejs express mysql
 nodejs写接口过程，并且调用渲染
 参考资源：
